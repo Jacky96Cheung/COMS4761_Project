@@ -1,4 +1,4 @@
-run_accession condition sample
+> run_accession condition sample
 K_SMARTBULK_pS6NST001_RUN001 IP_Sucrose A
 K_SMARTBULK_pS6NST002_RUN001 IP_Sucrose B
 K_SMARTBULK_pS6NST003_RUN001 IP_Sucrose C
