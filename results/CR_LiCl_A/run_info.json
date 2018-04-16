@@ -1,0 +1,13 @@
+{
+	"n_targets": 113193,
+	"n_bootstraps": 0,
+	"n_processed": 14858212,
+	"n_pseudoaligned": 13787042,
+	"n_unique": 4175282,
+	"p_pseudoaligned": 92.8,
+	"p_unique": 28.1,
+	"kallisto_version": "0.44.0",
+	"index_version": 10,
+	"start_time": "Sat Apr 14 02:31:45 2018",
+	"call": "kallisto quant -i /Users/jackycheung/Desktop/Coursework/Computational_Genomics/COMS4761_Project/mouse_cDNA.idx -o /Users/jackycheung/Desktop/Coursework/Computational_Genomics/COMS4761_Project/CR_LiCl_A /Volumes/Seagate Backup Plus Drive/PHOSPHOTRAP RNASEQ/K_SMARTBULK_pS6NSTPOOL_RUN001/K_SMARTBULK_pS6NST032_RUN001/K_SMARTBULK_pS6NST032_RUN001_S32_L001_R1_001.fastq.gz /Volumes/Seagate Backup Plus Drive/PHOSPHOTRAP RNASEQ/K_SMARTBULK_pS6NSTPOOL_RUN001/K_SMARTBULK_pS6NST032_RUN001/K_SMARTBULK_pS6NST032_RUN001_S32_L001_R2_001.fastq.gz"
+}

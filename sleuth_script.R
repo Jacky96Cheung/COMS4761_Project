@@ -1,8 +1,6 @@
 get_sleuthobj <- function(p,r, cond1, cond2, t2g){
   sample_ids <- dir(file.path(p,r))
   print(sample_ids)
-  #cond1 <- c1
-  #cond2 <- c2
   cond1_id <- sample_ids[grepl(cond1, sample_ids)]
   print(cond1_id)
   cond2_id <- sample_ids[grepl(cond2, sample_ids)]
@@ -17,9 +15,10 @@ get_sleuthobj <- function(p,r, cond1, cond2, t2g){
   so <- sleuth_prep(s2c, target_mapping = t2g, extra_bootstrap_summary = TRUE)
   so <- sleuth_fit(so, ~condition, 'full')
   so <- sleuth_fit(so, ~1, 'reduced')
-  beta <- c('condition', cond1)
+  beta <- paste('condition', cond2, sep = "")
   so <- sleuth_wt(so, beta, which_model = "full")
-  f = c(cond1,cond2)
+  f <- paste("~/sleuth/",cond1,cond2, sep = "_")
+  print(f)
   sleuth_save(so, f)
 }
 
@@ -31,8 +30,15 @@ t2g <- getBM(attributes = c("ensembl_transcript_id",
                             "ensembl_gene_id", "external_gene_name"), mart = mart)
 t2g <- dplyr::rename(t2g, target_id = ensembl_transcript_id, 
                      ens_gene = ensembl_gene_id, ext_gene = external_gene_name)
-p <- "~/Desktop/test"
+p <- "/Users/elizabethboylesobolik/Desktop/COMS4761_Project"
 r <- "results"
-cond1 <- "CR_Sucrose"
-cond2 <- "IP_Sucrose"
-get_sleuthobj(p,r,cond1,cond2,t2g)
+cr <- "CR"
+ip <- "IP"
+
+for (s in  c("Sucrose", "Intralipid", "GW7647", "RACEQTI", "IV")){
+  cond1 <- paste(cr,s, sep = "_")
+  cond2 <- paste(ip,s, sep = "_")
+  get_sleuthobj(p,r,cond1,cond2,t2g)
+}
+
+
