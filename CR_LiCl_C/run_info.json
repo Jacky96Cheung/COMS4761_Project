@@ -1,13 +1,13 @@
 {
 	"n_targets": 113193,
-	"n_bootstraps": 0,
-	"n_processed": 14551126,
-	"n_pseudoaligned": 13424782,
-	"n_unique": 4053213,
-	"p_pseudoaligned": 92.3,
-	"p_unique": 27.9,
+	"n_bootstraps": 100,
+	"n_processed": 13806985,
+	"n_pseudoaligned": 12925644,
+	"n_unique": 3911973,
+	"p_pseudoaligned": 93.6,
+	"p_unique": 28.3,
 	"kallisto_version": "0.44.0",
 	"index_version": 10,
-	"start_time": "Sat Apr 14 02:14:59 2018",
-	"call": "kallisto quant -i /Users/jackycheung/Desktop/Coursework/Computational_Genomics/COMS4761_Project/mouse_cDNA.idx -o /Users/jackycheung/Desktop/Coursework/Computational_Genomics/COMS4761_Project/CR_LiCl_C /Volumes/Seagate Backup Plus Drive/PHOSPHOTRAP RNASEQ/K_SMARTBULK_pS6NSTPOOL_RUN001/K_SMARTBULK_pS6NST024_RUN001/K_SMARTBULK_pS6NST024_RUN001_S24_L001_R1_001.fastq.gz /Volumes/Seagate Backup Plus Drive/PHOSPHOTRAP RNASEQ/K_SMARTBULK_pS6NSTPOOL_RUN001/K_SMARTBULK_pS6NST024_RUN001/K_SMARTBULK_pS6NST024_RUN001_S24_L001_R2_001.fastq.gz"
+	"start_time": "Sun Apr 15 00:06:59 2018",
+	"call": "kallisto quant -i /Users/jackycheung/Desktop/Coursework/Computational_Genomics/COMS4761_Project/mouse_cDNA.idx -o /Users/jackycheung/Desktop/Coursework/Computational_Genomics/COMS4761_Project/CR_LiCl_C -b 100 /Volumes/Seagate Backup Plus Drive/PHOSPHOTRAP RNASEQ/K_SMARTBULK_pS6NSTPOOL_RUN001/K_SMARTBULK_pS6NST024_RUN001/trimmomatic_output/trimmomatic_output_L001_1P.fastq /Volumes/Seagate Backup Plus Drive/PHOSPHOTRAP RNASEQ/K_SMARTBULK_pS6NSTPOOL_RUN001/K_SMARTBULK_pS6NST024_RUN001/trimmomatic_output/trimmomatic_output_L001_2P.fastq"
 }
