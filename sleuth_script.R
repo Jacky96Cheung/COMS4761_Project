@@ -15,15 +15,16 @@ get_sleuthobj <- function(p,r, cond1, cond2, t2g){
   so <- sleuth_prep(s2c, target_mapping = t2g, extra_bootstrap_summary = TRUE)
   so <- sleuth_fit(so, ~condition, 'full')
   so <- sleuth_fit(so, ~1, 'reduced')
-  beta <- paste('condition', cond2, sep = "")
+  beta <- paste('condition', cond1, sep = "")
   so <- sleuth_wt(so, beta, which_model = "full")
-  f <- paste("~/sleuth/",cond1,cond2, sep = "_")
+  f <- paste("/Users/elizabethboylesobolik/Desktop/COMS4761_Project/sleuth_objects/",cond1,cond2, sep = "")
   print(f)
   sleuth_save(so, f)
 }
 
 library("sleuth")
 library("biomaRt")
+
 print(listMarts())
 mart <- useMart("ensembl",dataset="mmusculus_gene_ensembl")
 t2g <- getBM(attributes = c("ensembl_transcript_id", 
@@ -34,10 +35,10 @@ p <- "/Users/elizabethboylesobolik/Desktop/COMS4761_Project"
 r <- "results"
 cr <- "CR"
 ip <- "IP"
-
-for (s in  c("Sucrose", "Intralipid", "GW7647", "RACEQTI", "IV")){
-  cond1 <- paste(cr,s, sep = "_")
-  cond2 <- paste(ip,s, sep = "_")
+stims <- c("Intralipid", "LiCl", "RACEQTI", "GW7647", "IV")
+for (s in stims ){
+  cond1 <- paste(ip,"Sucrose", sep = "_")
+  cond2 <- paste(ip, s, sep = "_")
   get_sleuthobj(p,r,cond1,cond2,t2g)
 }
 
