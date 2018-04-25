@@ -12,12 +12,18 @@ get_sleuthobj <- function(p,r, cond1, cond2, t2g){
   print(kal_dirs)
   s2c <- data_frame(sample = sample_id, condition = conds, path = kal_dirs)
   print(s2c)
-  so <- sleuth_prep(s2c, target_mapping = t2g, extra_bootstrap_summary = TRUE)
+  so <- sleuth_prep(s2c, target_mapping = t2g, aggregation_column = 'ens_gene', extra_bootstrap_summary = TRUE)
   so <- sleuth_fit(so, ~condition, 'full')
   so <- sleuth_fit(so, ~1, 'reduced')
-  beta <- paste('condition', cond1, sep = "")
+  if(cond1 < cond2){
+    cond <- cond2
+  }
+  else{
+    cond <- cond1
+  }
+  beta <- paste('condition', cond, sep = "")
   so <- sleuth_wt(so, beta, which_model = "full")
-  f <- paste("/Users/elizabethboylesobolik/Desktop/COMS4761_Project/sleuth_objects/",cond1,cond2, sep = "")
+  f <- paste("/Users/elizabethboylesobolik/Desktop/sleuth_objects/",cond1,cond2, sep = "")
   print(f)
   sleuth_save(so, f)
 }
@@ -35,10 +41,10 @@ p <- "/Users/elizabethboylesobolik/Desktop/COMS4761_Project"
 r <- "results"
 cr <- "CR"
 ip <- "IP"
-stims <- c("Intralipid", "LiCl", "RACEQTI", "GW7647", "IV")
-for (s in stims ){
-  cond1 <- paste(ip,"Sucrose", sep = "_")
-  cond2 <- paste(ip, s, sep = "_")
+s_meta <- read.table("sleuth_metadata.txt", header = TRUE)
+for (row in 1:nrow(s_meta) ){
+  cond1 <- as.character(s_meta[row, "condition1"])
+  cond2 <- as.character(s_meta[row, "condition2"])
   get_sleuthobj(p,r,cond1,cond2,t2g)
 }
 
