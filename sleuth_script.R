@@ -1,3 +1,5 @@
+# a function that takes a path (p), the directory where the results are stored (r)
+# two conditions to compare (cond1, cond2) and an Ensembl gene id conversion table (t2g)
 get_sleuthobj <- function(p,r, cond1, cond2, t2g){
   sample_ids <- dir(file.path(p,r))
   print(sample_ids)
