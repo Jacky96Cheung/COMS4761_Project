@@ -1,6 +1,6 @@
 # load all the control kallisto files 
 # average the relative abundances, transcripts per million
-
+library(dplyr)
 # load the Allen Brain Atlas Structure Unionize csv file
 # (maybe just the entrez gene IDs and the expression energy -- one measure)
 
