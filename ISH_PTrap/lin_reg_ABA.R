@@ -9,7 +9,7 @@ library(dplyr)
 
 # make one more data-frame - tuples of tpm and ee ? maybe just data frame 
 setwd("/Users/elizabethboylesobolik/Desktop/")
-ish_pt_raw <- read.csv("output.csv", header = TRUE, sep = ",")
+ish_pt_raw <- read.csv("/Users/elizabethboylesobolik/Desktop/COMS4761_Project/ISH_PTrap/output.csv", header = TRUE, sep = ",")
 
 ish_pt <- filter(ish_pt_raw, Avg_TPM > 0 , Energy > 0 )
 
