@@ -1,0 +1,16 @@
+CR_GW7647_A
+CR_GW7647_B
+CR_Intralipid_A
+CR_Intralipid_B
+CR_Intralipid_C
+CR_IVA_A
+CR_IVA_B
+CR_LiCl_A
+CR_LiCl_B
+CR_LiCl_C
+CR_RACEQTI_A
+CR_RACEQTI_B
+CR_RACEQTI_C
+CR_Sucrose_A
+CR_Sucrose_B
+CR_Sucrose_C
