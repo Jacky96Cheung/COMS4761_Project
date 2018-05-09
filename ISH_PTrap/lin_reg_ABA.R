@@ -1,14 +1,10 @@
-# load all the control kallisto files 
-# average the relative abundances, transcripts per million
+# Plot simple scatter plots for linear regression analysis between
+# ISH and mRNA Seq. metrics of gene expression 
+
 library(dplyr)
-# load the Allen Brain Atlas Structure Unionize csv file
-# (maybe just the entrez gene IDs and the expression energy -- one measure)
+d <- "/Users/elizabethboylesobolik/Desktop/"
 
-# load the entrez/ensembl gene id map
-# make a new table with ensembl id/expression energies
-
-# make one more data-frame - tuples of tpm and ee ? maybe just data frame 
-setwd("/Users/elizabethboylesobolik/Desktop/")
+setwd(d)
 ish_pt_raw <- read.csv("/Users/elizabethboylesobolik/Desktop/COMS4761_Project/ISH_PTrap/output.csv", header = TRUE, sep = ",")
 
 ish_pt <- filter(ish_pt_raw, Avg_TPM > 0 , Energy > 0 )
@@ -43,9 +39,3 @@ dev.off()
 jpeg("count_tpm.jpg")
 scatter.smooth(x = log(ish_pt$Avg_Count), y = log(ish_pt$Avg_TPM), main = "Count ~ TPM")
 dev.off()
-# run simple linear regression of these two variables -- need to decide which 
-# one is dependent . . . 
-
-# bootstrap?
-
-# Next steps -- Run PCA, ICA, tSNE

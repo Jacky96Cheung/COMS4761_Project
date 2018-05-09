@@ -4,10 +4,16 @@
 library("sleuth")
 library("biomaRt")
 
-# First, gather all the filepaths/names of the sleuth objects to open
-setwd("/Users/elizabethboylesobolik/Desktop/sleuth_objects/")
+# File path specifications:
+# where are the sleuth objects?
 p <- "/Users/elizabethboylesobolik/Desktop"
 r <- "sleuth_objects"
+
+# where do you want to save the results?
+file_path <- "/Users/elizabethboylesobolik/Desktop/COMS4761_Project/sr/"
+
+# First, gather all the filepaths/names of the sleuth objects to open
+setwd(p)
 sleuth_objs <- (dir(file.path(p,r)))
 
 # Now open, plot each one!
@@ -28,15 +34,20 @@ for (s in sleuth_objs){
   list_info <- k[[1]]
   condition_name <- list_info$b1
   test <- names(condition_name)
-  print(test)
+
+  # make a volcano plot from the beta values of a Wald Test
   volcano <- plot_volcano(so, test, test_type = "wt", which_model = "full",
                sig_level = 0.1, point_alpha = 0.2, sig_color = "red",
                highlight = NULL)
   s_results <- sleuth_results(so, test, test_type = "wt", which_model = "full",
                  rename_cols = TRUE, show_all = TRUE)
-  file_path <- "/Users/elizabethboylesobolik/Desktop/sr/"
+  # save it!
   volc_file_name <- paste(file_path,"volcano", s, ".pdf", sep = "")
   table_file_name <- paste(file_path, s,".csv", sep = "")
+  
+  # as an image 
   ggsave(volc_file_name)
+  
+  # and a table of results to match the data points on the plot to genes
   write.csv(s_results, table_file_name)
 }
