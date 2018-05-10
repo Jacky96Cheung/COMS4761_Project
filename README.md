@@ -1,7 +1,7 @@
 # COMS4761_Project
 Final project for COMS4761 - Computational Genomics
 
-In order to run this project, a python code is first used to generate the
+In order to run this project, python code is first used to generate the
 initial results by performing the alignments and then manipulating these
 data into formats that will be used for analysis by R scripts. The alignment
 files are all already given here, so those steps can be skipped when testing
