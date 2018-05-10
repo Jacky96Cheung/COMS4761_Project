@@ -15,7 +15,7 @@ data in .txt formats.
 
 The Files Available on the Git:
 
->>> ISH_pTRAP
+### ISH_pTRAP
 Contains a folder that contains exploratory scatter plots and exp_plot
 (expression plots). These are such simple scatter plots based on in-situ 
 hybridization and PhosphoTrap metrics available in an attempt to find a 
@@ -26,7 +26,7 @@ against PhosphoTrap data
 
 IDR_PTrap is to generate the IDR results of PhosphoTrap replicates. T
 
->>> alignment_results
+### alignment_results
 This folder contains the alignment results of all the kallisto alignments performed
 on the RNAseq data that we had available. As such, the folder contains sub folders
 that are the names of the samples (signifying the type of data and stimulus) which
@@ -34,27 +34,30 @@ contains the output of the alignment itself. It also CR_metadata.txt, which is j
 a text file of all the folders associated with control data. This was just used to 
 automate some of the data manipulation that had to be done with these files. T
 
->>> conversation_tables
+### conversation_tables
 This folder contains the txt files of the conversions available between various 
 methods of denoting genes/transcript. The naming convension of the file signifies 
 the conversion stored in the text file. Conversion_url.txt is simply the link to 
 the database by which all the conversion files were taken.
 
->>> ranked_metrics
+### ranked_metrics
 This folder contains csv files where the values of interest are listed in the order
 of ranks with their associated gene/transcript ID. This was used for the purposes 
 of IDR analysis.
 
->>> sleuth_results
+### sleuth_results
 As the name suggests, this is a folder containing results of the sleuth pipeline and
 subsequent analysis. As such, it contains the volcano plots and DE rankings of the genes
 based on beta value generated from a Wald Test.
 
->>> structure_union_subregion
+### structure_union_subregion
 Was not actually used, but contains the csv Allen Brain Atlas data from sub
 regions of the NST for further analysis
 
->>> Python_Code:
+### ABA_StUn_query.rtf
+Link to how we acquired the Allen Brain Atlas Unionization Information
+
+### Python_Code:
 
 This is the Jupyter Notebook where a lot of the pre-processing of data files
 occurred. Much of the statistical analysis was done using R. As such, this
@@ -100,25 +103,37 @@ another script.
 5) The remaining part of the notebook is doing analysis of the data and constructing
 a summary of all the data, including ranks for further analysis
 
->>> ish_phos_merge.csv
+### README.md
+Self-explanatory README file
+
+### RMA_build_NST.png
+Picture of what the query looks like in the Allen Brain Atlast Search engine
+for finding the unionization data.
+
+### ish_phos_merge.csv
 csv file generated from the Python pipeline that contains all of the data from
 the Allen Brain Atlas and PhosphoTrap data mapped to each other
 
->>> metadata.txt
+### metadata.txt
 Contains a file of the names of all the RNA seq folders containing the RNAseq
 data to be aligned. 
 
->>> plot_script.R
+### plot_script.R
 plot_script.R makes differential expression plots from the sleuth object
 generated in the above code.
 
->>> sleuth_script.R
+### sleuth_metadata.txt
+sleuth_metadata.txt is a list of all the comparisons made using the sleuth
+pipeline
+
+### sleuth_script.R
 sleuth_script.R is an implementation of the sleuth pipeline that generates
 sleuth objects
 
-
->>> structure_union_NST.csv
+### structure_union_NST.csv
 A csv file of all the data from the Allen Brain Atlas unionized from the NST
 region.
+
+
 
 
