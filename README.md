@@ -16,15 +16,27 @@ data in .txt formats.
 The Files Available on the Git:
 
 ### ISH_pTRAP
-Contains a folder that contains exploratory scatter plots and exp_plot
-(expression plots). These are such simple scatter plots based on in-situ 
-hybridization and PhosphoTrap metrics available in an attempt to find a 
-linear relationship between the two data. 
+Contains folders of simple linear regression (exploratory_scatter and exp_plots),
+and IDR analysis between control samples in PhosphoTrap (IDR_CR) and 
+ISH expression level vs. mRNA seq. transcript per million (IDR_test).
+
+exp_ISH_Ptrap.R is for scatter plots with expression level only
+
+lin_reg_ABA.R is for all the other exploratory scatter plots (Energy, Intensity, Density) and 
+(TPM, counts)
 
 IDR.R is used to generate the t vs. psi plots of in-situ hybridization data
-against PhosphoTrap data
+against PhosphoTrap data (plots output into IDR_test) 
 
-IDR_PTrap is to generate the IDR results of PhosphoTrap replicates. T
+IDR_PTrap.R is to generate the IDR results of PhosphoTrap replicates. 
+(plots output into IDR_CR)
+
+output.csv contains the average tpm, count, expression density, intensity, energy for each gene
+
+tpm_rep_rank.csv includes the tpm rank for every gene in each of the sucrose control replicates
+for each transcript
+
+all_data.csv includes the ranks of the metrics in output.csv plus expression level and its rank
 
 ### alignment_results
 This folder contains the alignment results of all the kallisto alignments performed
@@ -32,7 +44,7 @@ on the RNAseq data that we had available. As such, the folder contains sub folde
 that are the names of the samples (signifying the type of data and stimulus) which
 contains the output of the alignment itself. It also CR_metadata.txt, which is just 
 a text file of all the folders associated with control data. This was just used to 
-automate some of the data manipulation that had to be done with these files. T
+automate some of the data manipulation that had to be done with these files. 
 
 ### conversation_tables
 This folder contains the txt files of the conversions available between various 

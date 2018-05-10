@@ -1,5 +1,6 @@
 # Exploratory plots for relationship between ISH and PhosphoTrap mRNA seq data
-# These are specifically for transcript per million and expression level metrics. 
+# These are specifically for transcript per million and expression level metrics.
+# Take in the kallisto results and ABA Structure Unionize data as input 
 library(dplyr)
 
 # relevant file names and paths

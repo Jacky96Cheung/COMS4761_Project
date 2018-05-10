@@ -1,4 +1,16 @@
 condition1	condition2
+IP_Sucrose	CR_Sucrose
+IP_Intralipid	CR_Intralipid
+IP_LiCl	CR_LiCl
+IP_GW7647	CR_GW7647
+IP_IVA	CR_IVA
+IP_RACEQTI	CR_RACEQTI
+IP_Intralipid	IP_Sucrose	
+IP_LiCl	IP_Sucrose	
+IP_GW7647	IP_Sucrose
+IP_IVA	IP_Sucrose	
+IP_RACEQTI	IP_Sucrose
+IP_GW7647	IP_Intralipid
 IP_IVA	IP_Intralipid
 IP_RACEQTI	IP_Intralipid
 IP_GW7647	IP_LiCl

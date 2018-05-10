@@ -4,10 +4,11 @@ library(dplyr)
 library(idr)
 
 # get to the correct directory
-d <- "/Users/elizabethboylesobolik/Desktop"
+d <- "/Users/elizabethboylesobolik/Desktop/COMS4761_Project/ISH_PTrap"
+folder <- "/IDR_CR/"
 setwd(d)
 
-cr_raw <- read.csv("tpma.csv", header = TRUE, sep = ",")
+cr_raw <- read.csv("tpm_rep_rank.csv", header = TRUE, sep = ",")
 
 # load the rank data from the raw input file
 rank_a <- cr_raw$rank_A
@@ -27,7 +28,7 @@ ab <- "/tpm_ab.jpg"
 ac <- "/tpm_ab.jpg"
 bc <- "/tpm_ab.jpg"
 
-filename <- paste(d, ab, sep = "")
+filename <- paste(d, folder, ab, sep = "")
 jpeg(filename)
 plot(tpm_ab$psi$t, tpm_ab$psi$value, xlab="t", ylab="psi", xlim=c(0, max(tpm_ab$psi$t)),
      ylim=c(0, max(tpm_ab$psi$value)), cex.lab=2)
@@ -35,7 +36,7 @@ lines(tpm_ab$psi$smoothed.line, lwd=4)
 abline(coef=c(0,1), lty=3)
 dev.off()
 
-filename <- paste(d, ac, sep = "")
+filename <- paste(d, folder, ac, sep = "")
 jpeg(filename)
 plot(tpm_ac$psi$t, tpm_ac$psi$value, xlab="t", ylab="psi", xlim=c(0, max(tpm_ac$psi$t)),
      ylim=c(0, max(tpm_ac$psi$value)), cex.lab=2)
@@ -43,7 +44,7 @@ lines(tpm_ac$psi$smoothed.line, lwd=4)
 abline(coef=c(0,1), lty=3)
 dev.off()
 
-filename <- paste(d, bc, sep = "")
+filename <- paste(d, folder, bc, sep = "")
 jpeg(filename)
 plot(tpm_bc$psi$t, tpm_bc$psi$value, xlab="t", ylab="psi", xlim=c(0, max(tpm_bc$psi$t)),
      ylim=c(0, max(tpm_bc$psi$value)), cex.lab=2)

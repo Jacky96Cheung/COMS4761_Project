@@ -1,7 +1,7 @@
 # a function that takes a path (p), the directory where the results are stored (r)
 # two conditions to compare (cond1, cond2) and an Ensembl gene id conversion table (t2g)
 
-get_sleuthobj <- function(p,r, cond1, cond2, t2g){
+get_sleuthobj <- function(p,r, cond1, cond2, t2g, sob_dir){
   # collect all the conditions/replicate names (references to samples)
   sample_ids <- dir(file.path(p,r))
   
@@ -50,7 +50,8 @@ get_sleuthobj <- function(p,r, cond1, cond2, t2g){
   so <- sleuth_wt(so, beta, which_model = "full")
   
   # designate a file path, name for the sleuth object
-  f <- paste("/Users/elizabethboylesobolik/Desktop/sleuth_objects/",cond1,cond2, sep = "")
+  # these are too big to store on Git, so I added them locally
+  f <- paste(sob_dir,cond1,cond2, sep = "")
   
   # save it!
   sleuth_save(so, f)
@@ -70,11 +71,14 @@ t2g <- getBM(attributes = c("ensembl_transcript_id",
 t2g <- dplyr::rename(t2g, target_id = ensembl_transcript_id, 
                      ens_gene = ensembl_gene_id, ext_gene = external_gene_name)
 
+# where are the kallisto results, where do the sleuth objects go?
 p <- "/Users/elizabethboylesobolik/Desktop/COMS4761_Project"
-r <- "results"
+r <- "alignment_results"
+sob_dir <- "/Users/elizabethboylesobolik/Desktop/sleuth_objects/"
 
 # read in text file of the comparisons we want
 s_meta <- read.table("sleuth_metadata.txt", header = TRUE)
+
 for (row in 1:nrow(s_meta) ){
   cond1 <- as.character(s_meta[row, "condition1"])
   cond2 <- as.character(s_meta[row, "condition2"])
