@@ -21,9 +21,6 @@ Contains a folder that contains exploratory scatter plots and exp_plot
 hybridization and PhosphoTrap metrics available in an attempt to find a 
 linear relationship between the two data. 
 
-plot_script.R makes differential expression plots from the sleuth object
-generated in the above code.
-
 IDR.R is used to generate the t vs. psi plots of in-situ hybridization data
 against PhosphoTrap data
 
@@ -52,6 +49,10 @@ of IDR analysis.
 As the name suggests, this is a folder containing results of the sleuth pipeline and
 subsequent analysis. As such, it contains the volcano plots and DE rankings of the genes
 based on beta value generated from a Wald Test.
+
+>>> structure_union_subregion
+Was not actually used, but contains the csv Allen Brain Atlas data from sub
+regions of the NST for further analysis
 
 >>> Python_Code:
 
@@ -103,9 +104,21 @@ a summary of all the data, including ranks for further analysis
 csv file generated from the Python pipeline that contains all of the data from
 the Allen Brain Atlas and PhosphoTrap data mapped to each other
 
+>>> metadata.txt
+Contains a file of the names of all the RNA seq folders containing the RNAseq
+data to be aligned. 
+
+>>> plot_script.R
+plot_script.R makes differential expression plots from the sleuth object
+generated in the above code.
 
 >>> sleuth_script.R
 sleuth_script.R is an implementation of the sleuth pipeline that generates
 sleuth objects
+
+
+>>> structure_union_NST.csv
+A csv file of all the data from the Allen Brain Atlas unionized from the NST
+region.
 
 
